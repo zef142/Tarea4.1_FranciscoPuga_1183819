@@ -745,6 +745,8 @@ void BubbleSortNodos1() {
 
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	Stopwatch stopwatch;
+	stopwatch.Start();
 	for (int j = 0; j < 16; ++j) {
 		for (int i = 0; i < 10; ++i) {
 			int value = Convert::ToInt32(dataGridView1->Rows[i]->Cells[j]->Value);
@@ -764,6 +766,9 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			milist->ExtractAtEnd();
 		}
 	}
+	stopwatch.Stop();
+	TimeSpan ts = stopwatch.Elapsed;
+	label3->Text = Convert::ToString(ts);
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -824,8 +829,11 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	Stopwatch stopwatch;
+	stopwatch.Start();
 	for (int j = 0; j < 12; ++j) {
 		for (int i = 0; i < 216; ++i) {
+			//Inge el archivo no se procesa correctamente debido a que esta en string, pero el programa no logra pasarlo a integral
 			int value = Convert::ToInt32(dgvMatriz->Rows[i]->Cells[j]->Value);
 			milist1->InsertAtEnd(value);
 		}
@@ -843,6 +851,9 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			milist1->ExtractAtEnd();
 		}
 	}
+	stopwatch.Stop();
+	TimeSpan ts = stopwatch.Elapsed;
+	label16->Text = Convert::ToString(ts);
 }
 };
 }
