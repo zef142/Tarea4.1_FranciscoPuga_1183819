@@ -10,6 +10,7 @@ namespace Tarea4FranciscoPuga1183819 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::IO;
+	using namespace System::Diagnostics;
 	int V[10];
 	int x = 10;
 	int V1[216];
@@ -726,7 +727,7 @@ void BubbleSortNodos() {
 
 void BubbleSortNodos1() {
 	int aux;
-	for (int z = 0; z < 217; z++) {
+	for (int z = 0; z < 216; z++) {
 		V1[z] = milist1->GetValue(z);
 	}
 
@@ -824,21 +825,21 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	for (int j = 0; j < 12; ++j) {
-		for (int i = 0; i < 217; ++i) {
+		for (int i = 0; i < 216; ++i) {
 			int value = Convert::ToInt32(dgvMatriz->Rows[i]->Cells[j]->Value);
 			milist1->InsertAtEnd(value);
 		}
 		BubbleSortNodos1();
-		for (int i = 0; i < 217; ++i) {
+		for (int i = 0; i < 216; ++i) {
 			milist1->ExtractAtEnd();
 		}
-		for (int i = 0; i < 217; ++i) {
+		for (int i = 0; i < 216; ++i) {
 			milist1->InsertAtEnd(V[i]);
 		}
-		for (int i = 0; i < 217; ++i) {
+		for (int i = 0; i < 216; ++i) {
 			dgvMatriz->Rows[i]->Cells[j]->Value = milist->GetValue(i);
 		}
-		for (int i = 0; i < 217; ++i) {
+		for (int i = 0; i < 216; ++i) {
 			milist1->ExtractAtEnd();
 		}
 	}
