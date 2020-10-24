@@ -726,7 +726,7 @@ void BubbleSortNodos() {
 
 void BubbleSortNodos1() {
 	int aux;
-	for (int z = 0; z < 216; z++) {
+	for (int z = 0; z < 217; z++) {
 		V1[z] = milist1->GetValue(z);
 	}
 
@@ -823,22 +823,22 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	for (int j = 2; j < 14; ++j) {
-		for (int i = 3; i < 219; ++i) {
+	for (int j = 0; j < 12; ++j) {
+		for (int i = 0; i < 217; ++i) {
 			int value = Convert::ToInt32(dgvMatriz->Rows[i]->Cells[j]->Value);
 			milist1->InsertAtEnd(value);
 		}
 		BubbleSortNodos1();
-		for (int i = 0; i < 216; ++i) {
+		for (int i = 0; i < 217; ++i) {
 			milist1->ExtractAtEnd();
 		}
-		for (int i = 0; i < 216; ++i) {
+		for (int i = 0; i < 217; ++i) {
 			milist1->InsertAtEnd(V[i]);
 		}
-		for (int i = 0; i < 216; ++i) {
+		for (int i = 0; i < 217; ++i) {
 			dgvMatriz->Rows[i]->Cells[j]->Value = milist->GetValue(i);
 		}
-		for (int i = 0; i < 216; ++i) {
+		for (int i = 0; i < 217; ++i) {
 			milist1->ExtractAtEnd();
 		}
 	}
